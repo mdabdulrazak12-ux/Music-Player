@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="music.css">
+</head>
+<body>
+
+    <!-- Header & Toggle Block -->
+    <header class="main-header">
+        <h1 class="player-title">Music Player</h1>
+        <div class="toggle-container">
+            <span class="toggle-label">Dark</span>
+            <label class="switch-toggle">
+                <input type="checkbox" id="theme-checkbox">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <!-- Unified Dashboard Workspace Layout -->
+    <div class="workspace-grid">
+        
+        <!-- Left Column Pane: Song Filters and Repository -->
+        <aside class="sidebar-panel left-panel">
+            <!-- 1. Search Bar Component Added -->
+            <div class="search-bar-row" style="margin-bottom: 15px;">
+                <input type="text" id="search-input" placeholder="Search by song or artist..." style="width: 100%; padding: 8px 12px; border-radius: 4px; border: 1px solid #cbd5e0; box-sizing: border-box;">
+            </div>
+
+            <div class="genre-filter-row">
+                <label for="genre-select">Filter by Genre:</label>
+                <select id="genre-select">
+                    <option value="all">All</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Soul">Soul</option>
+                    <option value="Rock">Rock</option>
+                </select>
+            </div>
+            <h2 class="panel-heading">All Songs</h2>
+            <nav id="master-songs-list" class="capsule-navigation">
+                <!-- Appended automatically by script.js -->
+            </nav>
+        </aside>
+
+        <!-- Center Column Pane: Media Content Center Card Window -->
+        <main class="player-card-center">
+            <div class="media-card-frame">
+                <div id="media-artwork-display" class="artwork-viewport">
+                    <!-- Controlled by renderCurrentSong() -->
+                    <p class="placeholder-fallback">Select a song to start listening</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Column Pane: Playlists Creation Tool Module -->
+        <aside class="sidebar-panel right-panel">
+            <div class="playlist-entry-form">
+                <input type="text" id="playlist-name-input" placeholder="Enter playlist name">
+                <button id="playlist-submit-btn">Create Playlist</button>
+            </div>
+            
+            <div class="playlist-tree-wrapper">
+                <h3 class="tree-section-header">Current Playlist</h3>
+                <h3 class="tree-section-header">All Playlists</h3>
+                <div id="playlists-tree-container">
+                    <!-- Rendered seamlessly by runtime functions -->
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

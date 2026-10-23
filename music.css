@@ -1,0 +1,232 @@
+/* Color Palette Mapping - Matching exact light blue screenshot aesthetics */
+:root {
+    --bg-window: #e0e0e0;
+    --bg-card: #63b3ed;
+    --bg-center: #4299e1;
+    --bg-nowplaying: #0077b6;
+    --text-primary: #000000;
+    --text-card: #ffffff;
+    --button-accent: #805ad5;
+    --border-color: #cbd5e0;
+}
+
+[data-theme="dark"] {
+    --bg-window: #1a202c;
+    --bg-card: #2d3748;
+    --bg-center: #2b6cb0;
+    --bg-nowplaying: #1a365d;
+    --text-primary: #ffffff;
+    --border-color: #4a5568;
+}
+
+body {
+    background-color: var(--bg-window);
+    color: var(--text-primary);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header Elements Bar formatting rules */
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.player-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.toggle-container {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #a0aec0;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.toggle-label {
+    font-size: 0.85rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.switch-toggle {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.switch-toggle input { opacity: 0; width: 0; height: 0; }
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #fff;
+    border-radius: 24px;
+    transition: .3s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #a0aec0;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(16px);
+}
+
+/* Workspace Multi-Column Core Layout Structure grid styling */
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 950px) {
+    .workspace-grid { grid-template-columns: 1fr; }
+}
+
+.sidebar-panel {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 500px;
+}
+
+.genre-filter-row {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.genre-filter-row select {
+    background-color: #718096;
+    color: #fff;
+    border: 1px solid #4a5568;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.panel-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Rounded Capsule Song Item Rows styles */
+.capsule-navigation button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.capsule-navigation button:hover {
+    background-color: #1a365d;
+}
+
+/* Center Panel layout properties */
+.player-card-center {
+    background-color: var(--bg-center);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.media-card-frame {
+    background-color: var(--bg-nowplaying);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.artwork-viewport img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.track-details-row h2 {
+    color: var(--text-card);
+    font-size: 1.4rem;
+    margin: 8px 0 4px 0;
+}
+
+.track-details-row p {
+    color: #93c5fd;
+    font-size: 0.95rem;
+    margin: 0 0 20px 0;
+}
+
+/* Native audio control panel element toolbar customization */
+audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+
+/* Right Panel Creation block design */
+.playlist-entry-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.playlist-entry-form input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #000;
+    font-size: 0.9rem;
+}
+
+.playlist-entry-form button {
+    background-color: var(--button-accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tree-section-header {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.placeholder-fallback {
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
